@@ -113,6 +113,7 @@
 		- 使用`git remote show <RemoteShortName>`查阅特定远程项目信息
 		- 使用`git remote rename <OldName> <NewName>`重命名远程项目名称，该命令同时修改远程追踪分支名称
 		- 使用`git remote (remove | rm) <RemoteShortName>`移除远程特定项目，所有该项目下的远程分支和配置都将被删除
+		- 使用`git remote set-url <RemoteShortName> <httpsURL | sshURL>`变更本地分支与远程分支的传输协议，例如以前为`https://`可修改为`SSHurl`
 	- 使用`git fetch <RemoteShortName>`远程拉取特定分支的全部项目数据，注意，该命令仅下载数据，不会将远程版本与本地版本合并
 	- 使用`git pull`远程拉取全部项目数据并与本地版本合并
 	- 使用`git push <RemoteShortName> <Branch>`将特定版本推送到远程分支
@@ -296,6 +297,19 @@
 - 讨论或者进一步修改并提交
 - 项目所有者合并或者关闭拉取请求
 
+## 第7章 Git Tools
+
+
+
+## 第8章 Customizing Git
+
+
+
+## 第9章 Git and Other Systems
+
+
+
+## 第10章 Git Internals
 
 
 
@@ -308,4 +322,4 @@
 
 
 ## 版本记录
-1. v1.0.0
+1. 2018年05月19日，v1.0.0
