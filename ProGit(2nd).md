@@ -287,6 +287,14 @@
 	- 使用`git shortlog --no-merges <BranchName> --not <VersionNumber>`列出所有提交的摘要
 
 ## 第6章 Github
+本章主要介绍Github的使用，采用“遇到问题再解决问题”的学习策略，需要提及的是Github基本流程：
+- Fork项目
+- 从master创建1个分支
+- 项目开发
+- 将分支推送至自己的Github项目
+- 在Github上打开1个拉取请求（pull request）
+- 讨论或者进一步修改并提交
+- 项目所有者合并或者关闭拉取请求
 
 
 
