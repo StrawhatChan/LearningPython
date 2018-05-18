@@ -207,6 +207,86 @@
 	- 必须注意，变基将改变repository的提交历史，是在抹掉部分修改历史，是否执行变基取决于你对提交历史的理解，如果认为提交历史是已发生事项的完整记录，则不应使用变基，因为它会抹掉历史；如果认为提交历史只是完成项目的故事记录，仅用于说清楚项目故事，则应该使用变基，以使故事变得简洁明了
 
 ## 第4章 Git的服务器应用
+1. 协议（protocols）：Git利用4种不同的协议传输数据，分别是Local、HTTP、Secure Shell（SSH）和Git
+	- 使用`git clone ["file://"]<LocalFilePath>`克隆本地项目，比如，`git clone /srv/git/project.git`或者`git clone file:///srv/git/project.git`，其中`file://`类似`http://`
+		- 使用`git remote add <LocalShortName> <LocalFilePath>`将本地repository添加至Git项目，即可像操作远程项目一样操作本地项目
+	- 使用`git clone [http:// | https://]`克隆HTTP或HTTPs协议下的项目
+	- 使用`git clone ssh://[user@]server:project.git`克隆SSH协议下的项目
+2. SSH权限控制
+	- 为每个成员设置账户
+	- 创建1个git用户，将每个成员的SSH公钥放入`~/.ssh/`文件夹中，将写入权限授给每个用户
+	- 从LDAP服务器或其其他中心化控制器为SSH服务器分发写入授权
+3. 生成SSH钥匙对
+	- 使用`ssh-keygen [options] "your_email@example.com"`命令后根据提示生成SSH钥匙对
+	- 生成的钥匙对为`PrivateKeyName`和`PublicKeyName.pub`，其中`PrivateKeyName`与`PublicKeyName`名称相同，区别在于，公钥有`.pub`后缀，私钥没有
+	- 钥匙对如果没有存储在`~/.ssh`文件夹中，可将钥匙对剪切至该文件夹；在Ubuntu系统中，`~/.ssh`的路径全称为`/home/username/.ssh`
+	- 在不同操作系统中生成SSH钥匙对的细节可查阅[Github帮助](https://help.github.com/articles/generating-ssh-keys)
+4. 创建SSH服务器并授权的步骤
+	- 创建1个新的git用户
+		- `sudo adduser git`
+		- `su git`
+		- `cd`
+		- `mkdir .ssh && chmod 700 .ssh`
+		- `touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys`，其中，`authorized_keys`可换成其他名称
+	- 将所有公钥全部复制到`~/.ssh/authorized_keys`文件夹中
+	- 设置空的repository
+		- `cd <GitPath>`
+		- `git init -bare`
+	- 假设其他用户做了修改，需要将修改推送到刚刚创建的SSH中，在其他用户在他们本地做了提交后
+		- 使用`git remote add origin git@gitserver:<GitPath>`添加新创建的远程项目
+		- 使用`git push origin master`将提交推送至SSH服务器上
+	- 上述操作同时赋予所有授权用户登陆SSH服务器并获取Shell的权限，为禁止其登陆服务器并获取shell，只允许这些用户对repository进行操作，则执行以下操作
+		- 安装`git-shell`工具
+		- 使用`which git-shell`寻找位置
+		- 将git-shell文件复制到`/etc/shells`文件夹中，如果没有`shells`文件夹，则自行创建
+		- 使用`sudo chsh <UserName> -s <shell>`禁止用户登陆SSH服务器并获取shell
+		- 使用`git help shell`获取更多帮助信息
+5. 其他服务器类型：
+	- Daemon，明文传输，通过`git daemon`命令可设置明文传送的Git协议
+	- Smart HTTP，既可以像SSH授权传输数据，也可以像`git://`或者`daemon`明文传输数据
+	- GitWeb，是基于web的可视化Git界面，依赖于`lighttpd`或者`webrick`这类轻量级的web服务，通常情况下，Linux系统安装了`lighttpd`，可在项目文件夹中使用`git instaweb --httpd=webrick`运行
+	- GitLab，是开源的Git服务方案，基于数据备份的web应用，安装、设置、维护等信息可查阅[Gitlab官方网站](https://gitlab.com/)
+	- 如果不想自建服务器，也可以使用第3方服务器，第3方服务器列表可查阅[Git wiki](https://git.wiki.kernel.org/index.php/GitHosting)；[Github](https://github.com/)是最大的第3方Git托管服务器
+
+## 第5章 Distributed Git
+本章通过对“私人项目、2人、单一项目开发”，“私人项目、多人、无写入权限、并行开发”，“公共项目、多人、无写入权限、并行开发”，“公共项目、多人、拥有所有权限的项目主导、并行开发”这4类情景的描述，与工作流相结合，介绍Git的使用。其中，“公共项目、多人、无写入权限、并行开发”介绍对Github上托管的公共项目作出贡献的方法。
+1. 分布式工作流能在Git上发生作用的2个关键特征：
+	- 多团队可平行开发；多个团队或开发人员可平行开发，并且可在开发后进行合并
+	- 控制多人同时推送；假设多人获取同一个repository并同时开发该项目后，如果其中1人已经将开发内容推送至服务器，Git将提示另1人无法直接推送其独立的开发内容，只有先拉取服务器上的最新版本内容才可继续推送
+	- 支持各种合作模式；每个开发人员同时有多个公共repository，对于其自身的repository拥有读、写权限，而对于其他的仅有读取权限，如果开发人员需要对他人的repository进行开发，可先克隆、再修改、然后推送至克隆的repository、最后向原作者发送拉取和合并请求，理论上说，任何项目都可以由所有开发人员进行开发，既可以有管理层级，也可以没有
+2. 项目贡献
+	- 描述项目贡献效率的变量有4个
+		- 活跃的贡献者数量，包括贡献者人数和贡献频次2个方面
+		- 工作流选择
+		- 提交权限
+		- 可能的外部贡献方法
+	- Git项目组在[Git的Github页面](https://github.com/git/git)下的`Documentation/SubmittingPatches`文件中提供了提交补丁的指引
+3. `rerere`特性
+	- `rerere`表示“reuse recorded resolution”
+	- 是合并冲突的解决方案
+	- 工作机制为，Git记录一系列成功合并的过程，如果观察到某个冲突是曾经解决过的冲突，`rerere`将直接使用最近一次的解决方案消除冲突，而不会对冲突做任何提示
+	- 使用`git config --global rerere.enabled true`命令启用`rerere`特性
+	- 使用`git rerere`命令进行缓存
+4. 版本签名
+	- 使用`git tag -s <VersionNumber> -m 'VersionMessage'`签名标签
+	- 签名标签需要使用`GnuPG`，一个基于RSA算法的可加密、可签名钥匙对
+		- 使用`sudo apt-get install gnupg`安装`gnupg`
+		- 使用`gpg --gen-key`生成钥匙对，文件存储于`~/.gnupg`文件夹内
+		- 上传公钥至服务器（例如[Ubuntu服务器](http://keyserver.ubuntu.com/)、[PGP Public Key Server](https://pgp.key-server.io/)、[MIT服务器](https://pgp.mit.edu/)、[赛门铁克服务器](https://keyserver.pgp.com/vkd/GetWelcomeScreen.event)，如果只用于在Git中签名标签，则无需上传服务器，因为Git自带分发公钥的解决方案，即将公钥作为blob保存在repository中，并添加标签直接指向这些内容），然后使用`gpg --fingerprint [用户ID | 邮件地址]`生成公钥指纹
+		- 使用`gpg --import <PrivateKeyName>`导入私钥
+		- 获取更多关于`gpg`的帮助使用`gpg --help`
+		- GnuPG的介绍和常用功能可参考[阮一峰的博客文章](http://www.ruanyifeng.com/blog/2013/07/gpg.html)
+	- 使用`gpg --list-keys`查看已有密钥信息
+	- 使用`gpg -a --export <密钥特征值> | git hash-object -w --stdin`为GPG密钥生成1个hash对象指向该密钥
+	- 使用`git tag -a <TagName> <hashValue>`将标签指向密钥hash值
+	- 使用`git push --tags`将所有标签推送至远程分支
+	- 使用`git show <TagName> | gpg --import`验证标签
+5. 其他命令
+	- 使用`git describe <BranchName>`将返回最近提交的标签、该提交以前的提交次数以及提交的SHA-1值
+	- 使用`git archive <BranchName> --prefix='<ProjectName>' | gzip > 'ArchiveName'.tar.gz`或者`git archive <BranchName> --prefix='<ProjectName>' --format=zip > 'ArchiveName'.zip`
+	- 使用`git shortlog --no-merges <BranchName> --not <VersionNumber>`列出所有提交的摘要
+
+## 第6章 Github
 
 
 
