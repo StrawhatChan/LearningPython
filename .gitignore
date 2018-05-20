@@ -1,2 +1,3 @@
 # 忽略sublime的项目文件
 *.sublime*
+*.py
