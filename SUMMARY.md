@@ -2,7 +2,7 @@
 
 * [项目简介](README.md)
 * [Git](Git/README_Git.md)
-	* [ProGit(2nd)](Git/ProGit(2nd).md)
+	* [ProGit(2nd)](Git/ProGit%282nd%29.md)
 * [Python](Python/README_Python.md)
 	* [Python综合](Python/Python.md)
 		* [Python帮助文档-Tutorial](Python/HelpDoc-Python365_Tutorial.md)
