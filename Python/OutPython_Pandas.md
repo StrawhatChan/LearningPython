@@ -5,7 +5,7 @@
 1. 直接用`apt-get`安装，在终端输入`sudo apt-get install python3-pandas`
 2. 使用pip（Python包管理工具）安装
 	- 在终端输入`(pip | pip3) install pandas`，其中，`pip`命令安装Python2下的包，`pip3`命令安装Python3下的包
-	- pip安装后无法直接使用`matplotlib`库，还需要安装依赖，终端输入`sudo apt-get build-dep python3-pandas`并根据提示完成安装，更多细节可查阅[Pandas官网文档](http://pandas.pydata.org/pandas-docs/stable/)
+	- pip安装后无法直接使用`pandas`库，还需要安装依赖，终端输入`sudo apt-get build-dep python3-pandas`并根据提示完成安装，更多细节可查阅[Pandas官网文档](http://pandas.pydata.org/pandas-docs/stable/)
 
 # 应用
 
