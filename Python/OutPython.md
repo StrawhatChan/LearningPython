@@ -13,8 +13,11 @@
 - Matplotlib
 - NumPy
 - Pandas
+- Requests
 - scikit-learn
 - SciPy
+- Scrapy
+- StatsModels
 - SymPy
 - 自定义
 
