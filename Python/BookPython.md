@@ -4,5 +4,5 @@
 
 **书籍目录：**
 
-- [x]Matthes, E., 2015: Python Crash Course[M]. San Francisco: No Starch Press.
-- [ ]Grus, J., 2016: Data Science from Scratch: First Principles with Python. O'Reilly Media.
+- [x] Matthes, E., 2015: Python Crash Course[M]. San Francisco: No Starch Press.
+- [ ] Grus, J., 2016: Data Science from Scratch: First Principles with Python. O'Reilly Media.

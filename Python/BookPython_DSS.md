@@ -95,8 +95,8 @@
 		- 第2类错误：原假设错误，但没有拒绝原假设
 	- 置信区间：重复很多次实验，其中90%-99%的“真”参数会落在观测到的置信区间内
 	- p-hacking
-		- 本质是质疑统计学中p值的价值，[The Extent and Consequences of P-Hacking in Science](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106)这篇文章中给出了p-hacking定义，即通过对数据、统计方法的选择，使统计分析结果从不显著变为显著；另一篇更早的关于p-hacking的文章[Scientific method: Statistical errors](https://www.nature.com/news/scientific-method-statistical-errors-1.14700)发表于《Nature》上；《American Scientist》也有一篇讨论因p-hacking引起可能的统计危机的文章[The Statistical Crisis in Science](https://www.americanscientist.org/article/the-statistical-crisis-in-science#)；美国统计学会也发表一篇名为[Statement on Statistical Significance and P-Values](http://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf)的声明，确定了使用P值的6条原则。
-		- 解决方案：要在审查数据之前确定假设，要在做假设之前整理好数据，牢记p值不是靠直觉得出；替代方案是贝叶斯推断。
+		- 本质是质疑统计学中p值的价值，[The Extent and Consequences of P-Hacking in Science](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002106)这篇文章中给出了p-hacking定义，即通过对数据、统计方法的选择，使统计分析结果从不显著变为显著；另一篇更早的关于p-hacking的文章[Scientific method: Statistical errors](https://www.nature.com/news/scientific-method-statistical-errors-1.14700)发表于《Nature》上；《American Scientist》也有一篇讨论因p-hacking引起可能的统计危机的文章[The Statistical Crisis in Science](https://www.americanscientist.org/article/the-statistical-crisis-in-science#)；美国统计学会也发表一篇名为[Statement on Statistical Significance and P-Values](http://www.amstat.org/asa/files/pdfs/P-ValueStatement.pdf)的声明，确定了使用P值的6条原则
+		- 解决方案：要在审查数据之前确定假设，要在做假设之前整理好数据，牢记p值不是靠直觉得出；替代方案是贝叶斯推断
 	- 贝叶斯推断
 		- 思路：将未知参数作为随机变量，从参数的先验分布出发，利用数据和贝叶斯定理计算更新后的后验分布，不再对检验本身给出概率推断，而是对参数本身给出概率推断
 		- 这种检验方式有争议，部分源于复杂的数学原理，部分源于先验分布的主观性
