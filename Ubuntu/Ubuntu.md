@@ -1,4 +1,4 @@
-**本文发表于“微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
+> **本文发表于“微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
 # 概要
 **本文采用知识库的方式，记录Ubuntu以下各方面的零散知识点：**

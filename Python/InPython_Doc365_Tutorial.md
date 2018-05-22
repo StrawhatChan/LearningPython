@@ -1,4 +1,4 @@
-**本文“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
+> **本文“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
 [The Python Tutorial 3.6.5](https://docs.python.org/3/tutorial/index.html)
 =============================

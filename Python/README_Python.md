@@ -1,4 +1,4 @@
-**Python文库“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
+> **Python文库“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
 **Python文库采用知识库的方式，记录Python以下各方面内容：**
 

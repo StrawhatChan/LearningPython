@@ -1,7 +1,5 @@
-**本部分“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
+> **本部分“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
-
-# 概要
 **本部分为Python第3方库的安装、应用与理解，采用知识库的方式，记录Python第3方以下各方面内容：**
 
 1. 库的安装

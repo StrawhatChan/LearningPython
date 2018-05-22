@@ -1,4 +1,4 @@
-**本部分为Python第3方库Requests的安装、应用与理解，“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
+> **本部分为Python第3方库Requests的安装、应用与理解，“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
 # 安装
 ### Ubuntu系统

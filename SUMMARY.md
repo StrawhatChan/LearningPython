@@ -1,7 +1,7 @@
 # Summary
 
 * [项目简介](README.md)
-* [Math](README_Math.md)
+* [Math](Math/README_Math.md)
 * [Python](Python/README_Python.md)
 	* [InPython](Python/InPython.md)
 		* [Doc365-Tutorial](Python/InPython_Doc365_Tutorial.md)
@@ -18,6 +18,7 @@
 		* [StatsModels](Python/OutPython_StatsModels.md)
 		* [SymPy](Python/OutPython_SymPy.md)
 	* [BookPython](Python/BookPython.md)
+		* [Python Crash Course](Python/BookPython_PCC_Basic.md)
 		* [数据科学入门](Python/BookPython_DSS.md)
 * [Git](Git/README_Git.md)
 	* [Git综合](Git/Git.md)
@@ -27,6 +28,7 @@
 * [Tools](Tools/README_Tools.md)
 	* [SublimeText3](Tools/SublimeText3.md)
 	* [VSCode](Tools/VSCode.md)
-	* [MarkdownMath](Tools/Markdown.md)
+	* [Markdown](Tools/Markdown.md)
+	* [LaTeX](Tools/LaTeX.md)
 * [Ubuntu](Ubuntu/README_Ubuntu.md)
 	* [Ubuntu综合](Ubuntu/Ubuntu.md)
