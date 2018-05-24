@@ -41,7 +41,7 @@
 		- [ ] [Scrapy]
 		- [ ] [StatsModels]
 		- [ ] [SymPy]
-	- [ ] [Python书籍]
+	- [x] [Python书籍]
 		- [x] [Python Crash Course]
 		- [x] [数据科学入门]
 - [ ] [SQL]
