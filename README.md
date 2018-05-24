@@ -19,12 +19,75 @@
 
 -------------------------
 
-**学习内容（内容交叉学习，排序不分先后）：**
+**学习内容（内容交叉学习，按字母排序）：**
 
-- Math
-- Python
-- Git
-- Data Science（数据科学）
-- Ubuntu
-- SQL
-- Tools
+- [ ] [Git]
+	- [ ] [Git综合]
+	- [x] [ProGit(2nd)]
+- [ ] [Math]
+- [ ] [Python]
+	- [ ] [Python内建]
+		- [ ] [Doc365-Library]
+		- [x] [Doc365-Reference]
+		- [x] [Doc365-Tutorial]
+	- [ ] [Python第3方库]
+		- [ ] [Matplotlib]
+		- [ ] [NLTK]
+		- [ ] [NumPy]
+		- [ ] [Pandas]
+		- [ ] [Requests]
+		- [ ] [scikit-learn]
+		- [ ] [SciPy]
+		- [ ] [Scrapy]
+		- [ ] [StatsModels]
+		- [ ] [SymPy]
+	- [ ] [Python书籍]
+		- [x] [Python Crash Course]
+		- [x] [数据科学入门]
+- [ ] [SQL]
+	- [ ] [SQL综合]
+- [ ] [Tools]
+	- [ ] [LaTeX]
+	- [ ] [Markdown]
+	- [x] [SublimeText3]
+	- [ ] [VSCode]
+- [ ] [Ubuntu]
+	- [ ] [Ubuntu综合]
+
+
+<!-- 
+完成列表备份
+- [ ] [Git]
+	- [ ] [Git综合]
+	- [x] [ProGit(2nd)]
+- [ ] [Math]
+- [ ] [Python]
+	- [ ] [Python内建]
+		- [ ] [Doc365-Library]
+		- [x] [Doc365-Reference]
+		- [x] [Doc365-Tutorial]
+	- [ ] [Python第3方库]
+		- [ ] [Matplotlib]
+		- [ ] [NLTK]
+		- [ ] [NumPy]
+		- [ ] [Pandas]
+		- [ ] [Requests]
+		- [ ] [scikit-learn]
+		- [ ] [SciPy]
+		- [ ] [Scrapy]
+		- [ ] [StatsModels]
+		- [ ] [SymPy]
+	- [ ] [Python书籍]
+		- [x] [Python Crash Course]
+		- [ ] [数据科学入门]
+- [ ] [SQL]
+	- [ ] [SQL综合]
+- [ ] [Tools]
+	- [ ] [LaTeX]
+	- [ ] [Markdown]
+	- [x] [SublimeText3]
+	- [ ] [VSCode]
+- [ ] [Ubuntu]
+	- [ ] [Ubuntu综合]
+
+ -->

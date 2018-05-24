@@ -18,7 +18,9 @@
 
 
 # 第3部分 命令
-
+- 网络
+    - 停止网络`service network-manager stop`
+    - 重启网络`service network-manager restart`
 
 
 
