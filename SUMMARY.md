@@ -3,7 +3,7 @@
 * [项目简介](README.md)
 * [Git](Git/README_Git.md)
 	* [Git综合](Git/Git.md)
-	* [ProGit(2nd)](Git/ProGit%282nd%29.md)
+	* [ProGit(2nd)](Git/ProGit_2nd.md)
 * [Math](Math/README_Math.md)
 * [Python](Python/README_Python.md)
 	* [Python内建](Python/InPython.md)
