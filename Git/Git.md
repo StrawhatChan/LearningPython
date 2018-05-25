@@ -25,3 +25,6 @@
     - 情景描述：在VSCode中使用Terminal将tlv2分支Fast-forward合并后，将master推送到master，并继续修改tlv2分支且提交，但在push时VSCode提示该分支不存在upstream分支
     - 原因分析：可能是使用`git merge`合并分支并将master推送后，本地tlv2分支与远程tlv2分支之间的追踪关系被解除了
     - 解决方案：使用`git checkout <LocalBranchName>`切换`HEAD`指针指向，再使用`git branch -u <RemoteShortName>/<BranchName>`命令，在本地分支与远程分支之间重新建立追踪关系
+- Git展示数学公式
+    - 情景描述：在`VSCode Version 1.23.1`中安装`Markdown All in One`插件，以便利用`$ math $`展示行内数学，以及利用`$$ math $$`使用整行数学公式，但在2018年05月24日完成“BookPython_DSS.md”提交并推送至Github和Gitbook后，发现在Github和Gitbook上无法展示数学公式
+    - 原因分析：
