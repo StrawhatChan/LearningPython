@@ -3,3 +3,5 @@
 
 # 忽略的项目文件夹
 /.vscode
+/_book
+/node_modules
