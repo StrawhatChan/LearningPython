@@ -1,5 +1,67 @@
 {
+    "title": "TecLearning",
+    "author": "Strawhat Chan",
+    "description": "记录Python、算法和量化的学习记录",
+    "language": "zh-hans",
+    "gitbook": ">=3.2.3",
+    "root": ".",
+    "links":{
+        "sidebar": {
+            "微博": "https://weibo.com/strawhatchan"
+        }
+    },
     "plugins": ["-katex-plus",
-                "mathjax"
-                ]
+                "-lunr",
+                "-search",
+                "-livereload",
+                "highlight",
+                "mathjax",
+                "search-plus",
+                "splitter",
+                "expandable-chapters-small",
+                "donate",
+                "-prism",
+                "-prism-ext",
+                "-prism-themes",
+                "-todo",
+                "disqus",
+                "github",
+                "anchors",
+                "anchor-navigation-ex",
+                "sharing"
+                ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": false
+        },
+        "github": {
+            "url": "https://github.com/StrawhatChan/TecLearning"
+        },
+        "disqus": {
+            "shortName": "https-strawhatchan-gitbooks-io"
+        },
+        "donate": {
+            "wechat": "/images/weixin.png",
+            "alipay": "/images/alipay.png",
+            "title": " 停一下，请拿金钱羞辱我",
+            "button": "打赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+        },
+        "anchor-navigation-ex": {
+            "mode": "float",
+            "associatedWithSummary": false,
+            "showlevel": false
+        },
+        "sharing": {
+            "weibo": true,
+            "twitter": true,
+            "facebook": false,
+            "google": false,
+            "instapaper": false,
+            "all": [
+                "weibo"
+            ]
+        }
+    }
 }

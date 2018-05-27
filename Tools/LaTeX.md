@@ -11,3 +11,11 @@
 
 # 数学表达
 
+
+# 参考资料
+- [Cmd Markdown 公式指导手册](https://www.zybuluo.com/codeep/note/163962)
+- [StackExchange上的讨论](https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference)
+
+# 版本记录
+
+# 微博发布
