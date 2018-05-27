@@ -41,8 +41,8 @@
             "shortName": "https-strawhatchan-gitbooks-io"
         },
         "donate": {
-            "wechat": "/images/weixin.png",
-            "alipay": "/images/alipay.png",
+            "wechat": "/teclearning/content/images/weixin.png",
+            "alipay": "/teclearning/content/images/alipay.png",
             "title": " 停一下，请拿金钱羞辱我",
             "button": "打赏",
             "alipayText": "支付宝打赏",
