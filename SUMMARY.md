@@ -37,14 +37,23 @@
 * [SQL简介](SQL/README_SQL.md)
 * [SQL综合](SQL/SQL.md)
 
-## 第5部分 Tools
+## 第5部分 Web语言
+* [Web简介](Web/README_Web.md)
+* [CSS](Web/CSS.md)
+* [HTML](Web/HTML.md)
+* [JavaScript](Web/JavaScript.md)
+* [Node.js](Web/NodeJS.md)
+* [PHP](Web/PHP.md)
+* [XML](Web/XML.md)
+
+## 第6部分 Tools
 * [Tools简介](Tools/README_Tools.md)
 * [LaTeX](Tools/LaTeX.md)
 * [Markdown](Tools/Markdown.md)
 * [SublimeText3](Tools/SublimeText3.md)
 * [VSCode](Tools/VSCode.md)
 
-## 第6部分 Ubuntu
+## 第7部分 Ubuntu
 * [Ubuntu简介](Ubuntu/README_Ubuntu.md)
 * [Ubuntu综合](Ubuntu/Ubuntu.md)
 

@@ -2,24 +2,6 @@
 项目托管于 #Github# 地址：https://github.com/StrawhatChan/TecLearning/tree/tlv2  也可查阅 #Gitbook# 地址：https://strawhatchan.gitbooks.io/teclearning/content/  @简书 上也有，地址：https://www.jianshu.com/u/6d1cbd19e7c1  吐槽 #头条文章# 的编辑器[吐槽][吐槽][吐槽]
  -->
 
-<!-- 
-在网页中添加mathjax数学公式引擎
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    jax: ["input/TeX", "output/HTML-CSS"],
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { fonts: ["TeX"] }
-  });
-</script>
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script> 
--->
-
 还不会添加标签，为标签留白:)
 
 -------------------------
@@ -73,6 +55,13 @@
 	- [ ] [VSCode]
 - [ ] [Ubuntu]
 	- [ ] [Ubuntu综合]
+- [ ] [Web]
+	- [ ] CSS
+	- [ ] HTML
+	- [ ] JavaScript
+	- [ ] Node.js
+	- [ ] PHP
+	- [ ] XML
 
 <!-- 
 完成列表备份
@@ -109,4 +98,11 @@
 	- [ ] [VSCode]
 - [ ] [Ubuntu]
 	- [ ] [Ubuntu综合]
+- [ ] [Web]
+	- [ ] CSS
+	- [ ] HTML
+	- [ ] JavaScript
+	- [ ] Node.js
+	- [ ] PHP
+	- [ ] XML
  -->

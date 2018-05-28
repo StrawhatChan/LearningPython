@@ -25,7 +25,20 @@
 
 
 # 第4部分 系统设置
-
+- shadowsocks创建及开机启动
+    - 自建1个`shadowsocks.json文件`放入`etc`目录
+    - `shadowsocks.json文件`内容见下
+    - 打开开机启动应用，新建1个开机启动项，在命令栏内输入`sudo sslocal -c /etc/shadowsocks.json`
+```json
+{
+    "server": "填写服务器地址",
+    "server_port": 填写服务器端口,
+    "local_address": "127.0.0.1",
+    "local_port": 填写本地端口,
+    "password": "填写密码",
+    "method": "填写加密方式"
+}
+```
 
 
 # 第5部分 常用软件和工具
