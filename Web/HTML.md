@@ -1,19 +1,5 @@
 > **本文“发表于微博自媒体”，微博：[@钻石草帽](https://weibo.com/strawhatchan)**
 
-- [概要](#概要)
-- [概念](#概念)
-- [元素](#元素)
-    - [元素概述](#元素概述)
-    - [一般元素](#一般元素)
-    - [格式化元素](#格式化元素)
-    - [空元素](#空元素)
-- [属性](#属性)
-    - [属性类型](#属性类型)
-    - [属性值](#属性值)
-- [版本记录](#版本记录)
-- [微博发布](#微博发布)
-
-
 # 概要
 **本文采用知识库的方式，记录HTML以下各方面内容：**
 1. 相关概念
@@ -38,6 +24,7 @@
     - `<body>`包含可见的网页内容
     - `<h1>`定义最大的标题
     - `<p>`定义1个段落
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -53,6 +40,7 @@
 
 </html> 
 ```
+
 - HTML版本
 
 | Version   | Year |
@@ -123,6 +111,7 @@
         - 已访问链接为紫色且有下划线
         - 活动链接为红色且有下划线
         - 可通过CSS文件修改定义的链接颜色
+
 ```css
 <style>
 a:link {
@@ -150,6 +139,7 @@ a:active {
 }
 </style> 
 ```
+
 - 按钮（button）
     - 按钮通过`<button>`标签定义
     - 定义形式：`<button>content</button>`
@@ -164,6 +154,7 @@ a:active {
         - `<dd>`表示描述信息
     - 所有列表元素都可以相互嵌套
     - 可通过CSS或`<style>`将列表设定为水平列表，控制的关键是`li {float: left | right;}`，即将列表内容浮动至左侧或者右侧，但不能浮动至中间；[HTML Lists](https://www.w3schools.com/html/html_lists.asp)Chapter Summary最后一句话中，认为使用`display:inline`也能实现水平列表，经在Ubuntu 18 LTS和VSCode 1.23.1下测试，**无法实现**
+
 ```html
 <!-- 无序列表 -->
 <ul>
@@ -185,6 +176,7 @@ a:active {
   <dd>- white cold drink</dd>
 </dl> 
 ```
+
 - 预格式化
     - 通过`<pre>`标签定义，将保留空白符和断行标识符
 - 注释
@@ -212,6 +204,7 @@ a:active {
     - 可在CSS文件中为表格定义样式，如`table, th, td {border: 1px solid black; border-collapse: collapse;border-spacing: 5px;}`、`th, td {padding: 15px;}`、`th {text-align: left;}`
     - 可通过`colspan="num"`属性设定数据占用列的数量
     - 可通过`rowspan="num"`属性设定数据占用行的数量
+
 ```html
 <!-- 表格示例 -->
  <table style="width:100%">
@@ -232,7 +225,6 @@ a:active {
   </tr>
 </table> 
 ```
-
 
 ## 格式化元素
 格式化元素（formatting elements）给文本定义一些特殊的含义，调用方式与HTML的一般元素相同
@@ -323,6 +315,7 @@ a:active {
         - background-image：背景图片，调用方式：`background-image:url('clouds.jpg')；`
         - list-style-type：无序列表定义列表符号，调用方式：`<ul style="list-style-type:disc | circle | square | none">`
         - type：有序列表定义列表符号，调用方式：`<ol type="1 | A | a | I | i">`
+
 ```html
 <!-- HTML内部调用CSS -->
 <head>
@@ -350,6 +343,7 @@ p{  color: red;
     color: blue;
 }
 ```
+
 - lang
     - 通常在`<html>`标签中
     - 调用方式：`<html lang="zh-han">`
@@ -362,6 +356,7 @@ p{  color: red;
     - 为HTML元素指定唯一的ID
     - 可通过id属性创建书签
     - 可通过id属性为该拥有该id的表格设定样式
+
 ```html
 <!-- 为创建标签设定id -->
 <h2 id="C4">content</h2>
@@ -370,6 +365,7 @@ p{  color: red;
 <!-- 其他页面跳转 -->
 <a href="htmlname.html#C4">跳转到C4</a>
 ```
+
 ```html
 <!-- 为特定表格设定样式创建id -->
 <table id="t01">
@@ -392,15 +388,18 @@ table#t01 th {
 }
 </style>
 ```
+
 - class
     - 为特定类型元素定义一种样式
     - 可理解为通过`class`定义了一类HTML元素，并使用`tagname.classname`的方式定义该类型元素的样式
+
 ```html
 <p class="error">content</p>
 p.error {
     color: red;
 }
 ```
+
 - name
     - 隶属于`<map>`元素，定义map的名称
     - 调用方式：`<map name="mapname">`
