@@ -224,7 +224,7 @@
     - 百分比：所含元素内容宽度的百分比
 - 在不同方向上边框内扩展内容边界：padding-top|right|bottom|left分别控制向上、右、下、左扩展的距离，调用方式与padding相同
 
-![margin、border、padding和content的关系](images/boxmodel.png)
+![margin、border、padding和content的关系](../images/boxmodel.png)
 
 ## 元素高与宽
 - 元素的高：height
