@@ -21,3 +21,6 @@ HTML5Shiv是HTML5中一个置于`<head>`元素中的stylesheet之后，并使用
 
 ## 语义元素
 语义元素（semantic elements）是指，对于浏览器和开发者而言，定义内容明确的元素
+
+## CSS
+CSS是Cascading Style Sheets的首字母简写，是一门用于描述HTML元素显示方式的语言，可同时控制多个页面的显示，大幅提高设计效率，内容存储于`.css`文件中

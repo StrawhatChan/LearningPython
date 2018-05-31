@@ -1,5 +1,5 @@
 <!-- 以下是添加在微博中的内容
-项目托管于 #Github# 地址：https://github.com/StrawhatChan/TecLearning/tree/tlv2  也可查阅 #Gitbook# 地址：https://strawhatchan.gitbooks.io/teclearning/content/  @简书 上也有，地址：https://www.jianshu.com/u/6d1cbd19e7c1  吐槽 #头条文章# 的编辑器[吐槽][吐槽][吐槽]
+项目托管于Github 传送门：https://github.com/StrawhatChan/TecLearning/tree/tlv2  也可查阅Gitbook 又一个传送门：https://strawhatchan.gitbooks.io/teclearning/content/  头条文章的编辑器能再难用点吗[吐槽]
  -->
 
 还不会添加标签，为标签留白:)
@@ -57,7 +57,7 @@
 	- [ ] [Ubuntu综合]
 - [ ] [Web]
 	- [ ] CSS
-	- [ ] HTML
+	- [x] HTML
 	- [ ] JavaScript
 	- [ ] Node.js
 	- [ ] PHP
