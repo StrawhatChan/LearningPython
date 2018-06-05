@@ -893,7 +893,7 @@ p.error {
     - HTML5新增
     - 隶属于`<input>`元素，使用正则表达式检查输入值
     - 仅与`type="text | search | url | tel | email | password"`联合使用
-- placehold
+- placeholder
     - 隶属于`<input>`元素，设定提示，并且提示文本将显示在文本框中
 - required
     - HTML5新增

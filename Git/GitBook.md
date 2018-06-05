@@ -117,6 +117,7 @@ Gitbook的插件建立在`Node modules`之上，`package.json`和`index.js`是�
 - `engines`必须包含`gitbook`的版本信息
 - 该文件遵循[JSON-Schema指引](http://json-schema.org/)，更多信息可阅读[NPM documentation](https://docs.npmjs.com/files/package.json)
 - package.json文件示例如下
+
 ```json
 {
     "name": "gitbook-plugin-mytest",
@@ -136,9 +137,11 @@ Gitbook的插件建立在`Node modules`之上，`package.json`和`index.js`是�
     }
 }
 ```
+
 ### index.js
 - `index.js`是插件运行的主要入口
 - `index.js`文件示例如下
+
 ```js
 module.exports = {
     // Map of hooks

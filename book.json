@@ -1,5 +1,14 @@
 {
-    "title": "TecLearning",
+    "title": "计算机学习笔记",
+    "keywords":[
+        "Python",
+        "Git",
+        "Algorithm",
+        "html",
+        "css",
+        "SQL",
+        "ubuntu"
+    ],
     "author": "Strawhat Chan",
     "description": "记录Python、算法和量化的学习记录",
     "language": "zh-hans",
@@ -41,8 +50,8 @@
             "shortName": "https-strawhatchan-gitbooks-io"
         },
         "donate": {
-            "wechat": "images/weixin.png",
-            "alipay": "images/alipay.png",
+            "wechat": "../images/weixin.png",
+            "alipay": "../images/alipay.png",
             "title": " 停一下，请拿金钱羞辱我",
             "button": "打赏",
             "alipayText": "支付宝打赏",

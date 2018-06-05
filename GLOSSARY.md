@@ -24,3 +24,15 @@ HTML5Shiv是HTML5中一个置于`<head>`元素中的stylesheet之后，并使用
 
 ## CSS
 CSS是Cascading Style Sheets的首字母简写，是一门用于描述HTML元素显示方式的语言，可同时控制多个页面的显示，大幅提高设计效率，内容存储于`.css`文件中
+
+## DOM
+DOM是Document Object Model的首字母简称，是一个平台和语言无关的接口，允许程序和脚本动态访问和更新文档的内容、结构和样式；它是1个W3C标准，定义了文件的读取和写入标准；它被分为3个部分：Core DOM（所有文件类型的标准模型）、XML DOM（XML文件的标准模型）、HTML DOM（HTML文件的标准模型）
+
+## HTML DOM
+HTML DOM是HTML的1个标准对象模型和程序接口，它定义的内容包括：将HTML元素作为树结构对象、所有HTML元素的属性、读取和写入HTML元素的方法、所有HTML元素的事件，换句话说，HTML DOM是1个如何获取、改变、增加和删除HTML元素的标准【树结构对象：当1个网页被加载后，浏览器将为这个网页创建1个按照树结构组成的一系列对象，根对象为HTML文件，文件之下为`<html>`对象，`<html>`元素之下为`<head>`和`<body>`两个对象，这两个分支至下有诸多元素、属性和文本对象】
+
+## XML DOM
+XML DOM与HTML DOM类似，是XML的1个标准对象模型和程序接口，定义了如何获取、改变、增加和删除XML节点
+
+## API
+API是Application Programming Interface的首字母简称，中文名为应用程序编程接口，它是用于构建应用程序软件的一组子程序定义、协议和工具，即定义了不同软件组件之间相互通信的一系列清晰的方法
