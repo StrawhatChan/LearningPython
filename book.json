@@ -1,14 +1,5 @@
 {
     "title": "计算机学习笔记",
-    "keywords":[
-        "Python",
-        "Git",
-        "Algorithm",
-        "html",
-        "css",
-        "SQL",
-        "ubuntu"
-    ],
     "author": "Strawhat Chan",
     "description": "记录Python、算法和量化的学习记录",
     "language": "zh-hans",
