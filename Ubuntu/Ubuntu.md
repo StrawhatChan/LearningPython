@@ -9,27 +9,43 @@
 5. 常用软件和工具
 6. 应用过程中遇到的问题及其解决方案
 
-# 第1部分 系统安装
+# 系统安装
 
 
 
-# 第2部分 文件夹结构
+# 文件夹结构
 - hosts
     - 文件位置：/etc/hosts
     - 通过在终端输入`sudo vi /etc/hosts`对hosts文件进行修改
-    - wikipedia通过修改hosts文件进行直连，只有在直连时才能编辑页面
+    - 访问wikipedia通过修改hosts文件进行直连，只有在直连时才能编辑页面
         - 198.35.26.96 zh.wikipedia.org  #中文维基百科
         - 198.35.26.96 zh.m.wikipedia.org  #中文维基百科移动版
         - 198.35.26.96 zh-yue.wikipedia.org  #粤文维基百科
         - 198.35.26.96 zh.wikinews.org  #中文维基新闻
 
-# 第3部分 命令
+# 文件类型
+- .bak
+    - `.bak`文件是同名备份文件，即与某个文件名称相同的备份文件，备份时直接添加`.bak`后缀，还原时将文件后缀修改为源文件后缀即可
+
+# 命令
 - 网络
     - 停止网络`service network-manager stop`
     - 重启网络`service network-manager restart`
+- deb包
+    - 安装：`dpkg -i package.deb`
+    - 仅删除包：`dpkg -r package`
+    - 删除包和配置文件：`dpkg -P package`
+    - 列出与包有关的文件：`dpkg -L package`
+    - 显示版本：`dpkg -l package`
+    - 解包：`dpkg -unpack package.deb`
+    - 搜索包内容：`dpkg -S keyword`
+    - 列出已安装包：`dpkg -l`
+    - 列出deb包的内容：`dpkg -c package.deb`
+    - 配置包：`dpkg -configure package`
+    - 更多信息可通过在终端中输入`dpkg --help`或`man dpkg`查询
 
 
-# 第4部分 系统设置
+# 系统设置
 - shadowsocks创建及开机启动
     - 自建1个`shadowsocks.json文件`放入`etc`目录
     - `shadowsocks.json文件`内容见下
@@ -73,11 +89,13 @@
     - 将源地址直接添加至sources.list，保存后关闭，在终端运行`sudo apt-get update`使对sources.list的修改生效
     - 另一种简单的但定制型更差的修改方案是通过Ubuntu Software中的Software & Updates选项进行修改，该面板可增减源、配置源文件夹、设定下载服务器等
 
-# 第5部分 常用软件和工具
+# 常用软件和工具
 
 
 
-# 第6部分 问题及解决方案
-
+# 问题及解决方案
+- 单个源文件.bak备份
+    - 备份`sudo cp FileName FileName.bak`
+    - 还原`sudo cp FileName.bak FileName`
 
 

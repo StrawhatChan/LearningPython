@@ -1,5 +1,5 @@
 <!-- 以下是添加在微博中的内容
-项目托管于Github 传送门：https://github.com/StrawhatChan/TecLearning/tree/tlv2  也可查阅Gitbook 又一个传送门：https://strawhatchan.gitbooks.io/teclearning/content/ 
+项目托管于Github 传送门：https://github.com/StrawhatChan/TecLearning  也可查阅Gitbook 又一个传送门：https://strawhatchan.gitbooks.io/teclearning/content/ 
  -->
 
 还不会添加标签，为标签留白:)
@@ -10,7 +10,7 @@
 
 -------------------------
 
-**项目文件托管于Github，项目地址：[TecLearning](https://github.com/StrawhatChan/TecLearning/tree/tlv2)，格式化的文字内容移步Gitbook的[TecLearning Space](https://strawhatchan.gitbooks.io/teclearning/content/)，如果Gitbook打开太慢，也可在[简书页面](https://www.jianshu.com/u/6d1cbd19e7c1)查阅部分文字内容。**
+**项目文件托管于Github，项目地址：[TecLearning](https://github.com/StrawhatChan/TecLearning)，格式化的文字内容移步Gitbook的[TecLearning Space](https://strawhatchan.gitbooks.io/teclearning/content/)，如果Gitbook打开太慢，也可在[简书页面](https://www.jianshu.com/u/6d1cbd19e7c1)查阅部分文字内容。**
 
 **PS：项目通过Github管理，Github与Gitbook同步，但不一定与简书同步。**
 
