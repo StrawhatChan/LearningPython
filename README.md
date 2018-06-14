@@ -10,9 +10,7 @@
 
 -------------------------
 
-**项目文件托管于Github，项目地址：[TecLearning](https://github.com/StrawhatChan/TecLearning)，格式化的文字内容移步Gitbook的[TecLearning Space](https://strawhatchan.gitbooks.io/teclearning/content/)，如果Gitbook打开太慢，也可在[简书页面](https://www.jianshu.com/u/6d1cbd19e7c1)查阅部分文字内容。**
-
-**PS：项目通过Github管理，Github与Gitbook同步，但不一定与简书同步。**
+**项目文件托管于Github，项目地址：[TecLearning](https://github.com/StrawhatChan/TecLearning)，格式化的文字内容移步Gitbook的[TecLearning Space](https://strawhatchan.gitbooks.io/teclearning/content/)，Github与Gitbook同步**
 
 -------------------------
 

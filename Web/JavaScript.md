@@ -117,7 +117,7 @@ typeof myCar                  // "undefined" *
 typeof null                   // "object" 
 ```
 
-| 原始值            | 数值                         | 字符串             | 布尔值                          |
+| 原始值           | 数值                        | 字符串            | 布尔值                         |
 | ---------------- | :-------------------------: | :---------------: | :----------------------------: |
 | false            | 0                           | "false"           | false                          |
 | true             | 1                           | "true"            | true                           |
@@ -282,12 +282,14 @@ function () {}.constructor        // function Function(){[native code]}
     - ArrayName表示向量名称
     - ArrayValue表示向量值
     - CompareExpression表示比较表达式
-- 预先定义的方法，它们都可以用于以其他对象作为参数来调用对象方法。
+- 预先定义的方法
     - call()
     - apply()
+    - 相同：都可以用于以其他对象作为参数来调用对象方法
+    - 区别：<mark>call()将参数分开对待，apply()将参数作为向量对待</mark>
 
 ```javascript
-// 预先定义方法示例
+// call()示例
 // 尽管this是person1的方法，但在这里this与person2关联
 var person1 = {
     fullName: function() {
@@ -299,6 +301,44 @@ var person2 = {
     lastName: "Doe",
 }
 person1.fullName.call(person2);
+
+// apply()示例，说明与call()的功能相同
+var person = {
+    fullName: function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+var person1 = {
+    firstName: "Mary",
+    lastName: "Doe",
+}
+person.fullName.apply(person1);
+
+// 另一个call()示例，说明call()将参数分隔对待
+var person = {
+    fullName: function(city, country) {
+        return this.firstName + " " + this.lastName + "," + city + "," + country;
+    }
+}
+var person1 = {
+    firstName:"John",
+    lastName: "Doe",
+}
+person.fullName.call(person1, "Oslo", "Norway");
+// 结果为：John Doe,Oslo,Norway
+
+// 另一个apply()示例，说明apply()将参数作为向量对待
+var person = {
+    fullName: function(city, country) {
+        return this.firstName + " " + this.lastName + "," + city + "," + country;
+    }
+}
+var person1 = {
+    firstName:"John",
+    lastName: "Doe",
+}
+person.fullName.apply(person1, ["Oslo", "Norway"]);
+// 结果为：John Doe,Oslo,Norway
 ```
 
 ### 字符
@@ -757,7 +797,7 @@ finally {
     - static
     - yield
 - 代码惯例
-    - 编程风格
+    - 编程规范
         - 在脚本和函数开始时，声明所有变量
         - 初始化变量
         - 所有识别码名称（变量和函数）都使用camelCase命名，且都以字母开始
@@ -797,17 +837,155 @@ finally {
 - 保留词见[JavaScript Reserved Words](https://www.w3schools.com/js/js_reserved.asp)
 - JavaScript的版本见[JavaScript Versions](https://www.w3schools.com/js/js_versions.asp)
 
-# JS表单
-
-
-# JS对象
-
-
-# JS函数
-
-
-
 # JS HTML DOM
+## 概要
+- DOM定义了
+    - HTML元素为对象
+    - 所有HTML元素的属性和事件
+    - 方法可通过所有的HTML元素
+- 功能
+    - 修改页面中所有的HTML元素和属性
+    - 移除已存在的HTML元素和属性
+    - 增加新的HTML元素和属性
+    - 修改页面中所有的CSS样式
+    - 对页面中所有已存在的HTML事件重新反应
+    - 在页面中创建新的HTML事件
+- 程序接口
+    - 每个对象的属性，获取或设置的值
+    - 每个对象的方法，能做的动作
+- 名称说明
+    - IdName，ID名称
+    - TagName，tag名称
+    - ClassName，类名称
+    - attribute，属性
+    - value，值
+    - element，元素
+    - strings，字符串或文本
+
+## 对象
+- document，document对象代表整个网页，也是寻找元素、属性、样式、事件的起点
+
+## 属性
+- innerHTML，获取或替换HTML元素内容，element.innerHTML = new html content
+- attribute，获取或替换HTML元素的属性值，element.attribute = new value
+- style.property，获取或修改HTML元素的样式，element.style.property = new style，其中，style为固定字符，有关property的列表可见[自制HTML DOM Style Object列表](JS_ref/JavaScript_html_dom_obj_style.md)或者[官网HTML DOM Style Object列表](https://www.w3schools.com/jsref/dom_obj_style.asp)
+- anchors，返回所有拥有名称属性的\<a\>元素
+- baseURI，返回HTML文件的绝对基础URI
+- body，返回\<body\>元素
+- cookie，返回HTML文件的cookie
+- doctype，返回HTML文件的doctype
+- documentElement，返回\<html\>元素
+- documentMode，返回浏览器使用的模式
+- documentURI，返回HTML文件的URI
+- domain，返回HTML文件服务器的域名
+- embeds，返回\<embed\>元素
+- forms，返回\<form\>元素
+- head，返回\<head\>元素
+- images，返回\<img\>元素
+- implementation，返回DOM的履行
+- inputEncoding，返回HTML文件的字符集
+- lastModified，返回HTML文件更新的日期和时间
+- links，返回所有拥有href属性的\<area\>和\<a\>元素
+- readyState，返回HTML文件的加载状态
+- referrer，返回关联HTML文件的URI
+- scripts，返回所有\<script\>元素
+- strictErrorChecking，如果强制执行错误检查则返回
+- tilte，返回\<title\>元素
+- URL，返回HTML文件完整的URL
+
+## 方法
+- getElementById("IdName")，依据ID寻找元素
+- getElementsByTagName("TagName")，依据HTML标签名称寻找元素
+- getElementsByClassName("ClassName")，依据类名称寻找元素
+- querySelectorAll(value)，寻找符合条件的所有CSS选项
+- setAttribute(attribute, value)，获取或修改HTML元素的属性值
+- createElement(element)，创建HTML元素
+- removeChild(element)，移除HTML元素
+- appendChild(element)，增加HTML元素
+- replaceChild(element)，替换HTML元素
+- write(text)，写入HTML输出流
+- addEventListener("event", function[, useCapture])，依据事件类型执行函数，其中，事件类型不需要事件前缀，比如onclick中的on；useCapture只有true和false两个值，true表示capturing、false表示bubbing，主要功能是，当存在多个HTML元素嵌套并都设定了事件及其行动时，capturing从外向里执行，而bubbing则从里向外执行
+- removeEventListener("event", function)，移除添加的EventListener
+
+## 事件
+- 事件例子
+    - 点击鼠标
+    - 页面已加载
+    - 图片已加载
+    - 鼠标移动至HTML元素
+    - 输入区域改变
+    - HTML表单提交
+    - 敲击键盘上的按键
+- 分配事件
+    - 使用事件属性（attributes）为HTML元素分配事件，如` <button onclick="displayDate()">Try it</button>`
+    - 基于HTML DOM使用JavaScript为HTML元素分配事件，如`<script>document.getElementById("myBtn").onclick = displayDate;</script>`
+- 事件类型
+    - 根对象
+    - 动画
+    - 剪切板
+    - 拖动
+    - 聚焦
+    - Hash变动
+    - 输入
+    - 键盘
+    - 鼠标
+    - 页面过渡
+    - 窗口历史
+    - 进程
+    - 存储
+    - 触碰
+    - CSS过渡
+    - 用户交互
+    - 鼠标滚轮
+- 有关事件及其对象与方法的详细内容可见[自制HTML DOM Events列表](JS_ref/JavaScript_html_dom_event_property_method.md)或者[官方HTML DOM Events列表](https://www.w3schools.com/jsref/dom_obj_event.asp)
+
+## 节点
+根据W3C HTML DOM标准，在HTML文件中的任何东西都是节点，使用HTML DOM可以循着节点树使用节点关系，节点树上所有的节点都对JavaScript开放，并且可以创建、修改和删除节点
+- 节点类型
+    - 整个文件是文件节点
+    - 每一个HTML元素是元素节点
+    - HTML元素内点文本是本文节点
+    - 所有的注释是注释节点
+- 节点关系
+    - 节点树上的节点之间按照层级关系架构
+    - 根（root）、父（parent）、子（child）、姊妹（sibling）用于描述节点之间的关系
+        - 最顶端的节点称为根节点
+        - 除根节点外，每一个节点都有父节点
+        - 任意节点可以有多个子节点
+        - 姊妹节点是拥有相同父节点的节点
+- 节点属性
+    - 2个根节点属性
+        - document.body，HTML文件的body部分
+        - document.documentElement，html标签内的内容
+    - parentNode
+    - childNodes[nodenumber]
+        - innerHTML等价于childNodes[n].nodevalue，都返回节点的内容
+    - firstChild
+    - lastChild
+    - nextSibling
+    - previousSibling
+    - nodeName，指代节点的名称
+        - 节点名称为只读
+        - 元素节点的节点名称与标签相同，并且总是大写
+        - 属性（attribute）节点的节点名称为属性名称
+        - 文本节点的节点名称为`#text`
+        - 文件节点的节点名称为`#document`
+    - nodeValue，指代节点的值
+        - 元素节点的节点值为undefined
+        - 文本节点的节点值为文本自身
+        - 属性（attribute）节点的节点值为属性值
+    - nodeType
+        - 节点类型为只读
+        - 列表见下
+
+| 节点 | 类型 | 例子 |
+| --- | --- | --- |
+| ELEMENT_NODE | 1 | &lt;h1 class="heading"&gt;W3Schools&lt;/h1&gt; |
+| ATTRIBUTE_NODE | 2 | class = "heading"（已淘汰） |
+| TEXT_NODE | 3 | W3Schools |
+| COMMENT_NODE | 8 | &lt;!-- 注释 --&gt; |
+| DOCUMENT_NODE | 9 | HTML文件 |
+| DOCUMENT_TYPE_NODE | 10 | &lt;!Doctype html&gt; |
 
 
 
@@ -849,13 +1027,9 @@ finally {
     - [ ] 正则表达式
     - [ ] 错误处理
     - [ ] 其他
-- [ ] JS表单
-- [ ] JS对象
-- [ ] JS函数
 - [ ] JS HTML DOM
 - [ ] JS浏览器BOM
 - [ ] JS AJAX
 - [ ] JS JSON
 - [ ] jQuery
 - [ ] AngularJS
-

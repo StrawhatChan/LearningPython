@@ -36,3 +36,6 @@ XML DOM与HTML DOM类似，是XML的1个标准对象模型和程序接口，定�
 
 ## API
 API是Application Programming Interface的首字母简称，中文名为应用程序编程接口，它是用于构建应用程序软件的一组子程序定义、协议和工具，即定义了不同软件组件之间相互通信的一系列清晰的方法
+
+## URI
+URI是Uniform Resource Identifier的首字母简称，中文译为统一资源标识符，它是一个表示抽象或实物资源的紧凑字符序列，URI的任意实例或者有名称、或者有地址、或者两者都有，因此，可将URL和URN理解为URI的子集；详细内容可参考[RFC3986](https://tools.ietf.org/html/rfc3986)、[RFC3305](https://tools.ietf.org/html/rfc3305)和[RFC2141](https://tools.ietf.org/html/rfc2141)
