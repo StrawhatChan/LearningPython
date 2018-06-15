@@ -1,13 +1,37 @@
 
-<!Doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+<style>
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  /* 表示偶数行有背景色，偶数even可以换成odd，表示奇数行 */
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  /* 表示鼠标所在行变化颜色 */
+  #customers tr:hover {background-color: #ddd;}
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>
+</head>
+
 <body>
 <h1><a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">
     HTML DOM Events
   </a>
 </h1>
-<table>
+<table id="customers">
   <tr>
     <th style="width:10%">前缀</th>
     <th style="width:10%">名称</th>
@@ -621,7 +645,7 @@
   </a>
 </h1>
 
-<table>
+<table id="customers">
   <tr>
     <th style="width:20%">Property/Method</th>
     <th colspan="2">Description</th>
@@ -1056,5 +1080,4 @@ onkeyup event</td>
 </table>
 
 </body>
-</head>
 </html>
