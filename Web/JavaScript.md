@@ -868,7 +868,7 @@ finally {
 ## 属性
 - innerHTML，获取或替换HTML元素内容，element.innerHTML = new html content
 - attribute，获取或替换HTML元素的属性值，element.attribute = new value
-- style.property，获取或修改HTML元素的样式，element.style.property = new style，其中，style为固定字符，有关property的列表可见[自制HTML DOM Style Object列表](JS_ref/JavaScript_html_dom_obj_style.html)或者[官网HTML DOM Style Object列表](https://www.w3schools.com/jsref/dom_obj_style.asp)
+- style.property，获取或修改HTML元素的样式，element.style.property = new style，其中，style为固定字符，有关property的列表可见<a href="JS_ref/JavaScript_html_dom_obj_style.html" target="_blank">自制HTML DOM Style Object列表</a>或者[官网HTML DOM Style Object列表](https://www.w3schools.com/jsref/dom_obj_style.asp)
 - anchors，返回所有拥有名称属性的\<a\>元素
 - baseURI，返回HTML文件的绝对基础URI
 - body，返回\<body\>元素
@@ -937,7 +937,7 @@ finally {
     - CSS过渡
     - 用户交互
     - 鼠标滚轮
-- 有关事件及其对象与方法的详细内容可见[自制HTML DOM Events列表](JS_ref/JavaScript_html_dom_event_property_method.html)或者[官方HTML DOM Events列表](https://www.w3schools.com/jsref/dom_obj_event.asp)
+- 有关事件及其对象与方法的详细内容可见<a href="JS_ref/JavaScript_html_dom_event_property_method.html" target="_blank">自制HTML DOM Events列表</a>或者[官方HTML DOM Events列表](https://www.w3schools.com/jsref/dom_obj_event.asp)
 
 ## 节点
 根据W3C HTML DOM标准，在HTML文件中的任何东西都是节点，使用HTML DOM可以循着节点树使用节点关系，节点树上所有的节点都对JavaScript开放，并且可以创建、修改和删除节点
