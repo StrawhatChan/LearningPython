@@ -508,23 +508,23 @@ person.fullName.apply(person1, ["Oslo", "Norway"]);
 ### 数学
 - <mark>数学对象不同于其他全局对象，它不需要构建，方法和属性（常数）也是固定的，并且不要事先创建对象</mark>
 - 常数
-    - Math.E，返回$e$
-    - Math.PI，返回$\pi$值
-    - Math.SQRT2，返回$\sqrt{2}$
-    - Math.SQRT1_2，返回$\sqrt{\frac{1}{2}}$
-    - Math.LN2，返回$ln2$
-    - Math.LN10，返回$ln10$
-    - Math.LOG2E，返回$log_2e$
-    - Math.LOG10E，返回$log_{10}e$
+    - Math.E，返回$$e$$
+    - Math.PI，返回$$\pi$$值
+    - Math.SQRT2，返回$$\sqrt{2}$$
+    - Math.SQRT1_2，返回$$\sqrt{\frac{1}{2}}$$
+    - Math.LN2，返回$$ln2$$
+    - Math.LN10，返回$$ln10$$
+    - Math.LOG2E，返回$$log_2e$$
+    - Math.LOG10E，返回$$log_{10}e$$
 - 方法
     - Math.round(x)，四舍五入
-    - Math.pow(x, y)，表示指数$x^y$
-    - Math.sqrt(x)，表示开根号$\sqrt{x}$
-    - Math.abs(x)，表示绝对值$|x|$
+    - Math.pow(x, y)，表示指数$$x^y$$
+    - Math.sqrt(x)，表示开根号$$\sqrt{x}$$
+    - Math.abs(x)，表示绝对值$$|x|$$
     - Math.ceil(x)，表示向上四舍五入到最近的整数
     - Math.floor(x)，表示向下四舍五入到最近的整数
-    - Math.sin(x)，表示$sin(x)$
-    - Math.cos(x)，表示$cos(x)$
+    - Math.sin(x)，表示$$sin(x)$$
+    - Math.cos(x)，表示$$cos(x)$$
     - Math.min(x, y, z……)，表示列表的最小值
     - Math.max(x, y, z……)，表示列表的最大值
     - Math.random()，表示[0,1]的随机数
