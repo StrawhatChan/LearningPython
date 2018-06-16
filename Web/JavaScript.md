@@ -2,8 +2,11 @@
 
 # 概要
 **本文采用知识库的方式，记录JavaScript以下各方面内容：**
-1. JavaScript的功能、数据类型、语法、属性、方法、错误处理及调试
-2. 
+1. 功能、数据类型、语法、属性、方法、错误处理及调试
+2. HTML DOM的对象、属性、方法、事件和节点
+3. 浏览器BOM的对象以及属性和方法
+4. AJAX的概述和XMLHttpRequest对象
+5. JSON的概述与应用
 
 # JS
 ## 概述
@@ -647,9 +650,9 @@ list: {
     - m，多行匹配
 - 方括号
     - [abc]，方括号内的任意字符
-    - [^abc]，不属于方括号内的任意字符
+    - \[^abc\]，不属于方括号内的任意字符
     - [0-9]，方括号内字符之间的任意字符
-    - [^0-9]，不在方括号内字符之间的任意字符
+    - \[^0-9\]，不在方括号内字符之间的任意字符
     - (x|y)，任意指定字符
 - 元字符（metacharacter）
     - `.`，除了新行或其他行结束符以外的单个字符
@@ -861,9 +864,23 @@ finally {
     - value，值
     - element，元素
     - strings，字符串或文本
+    - function，函数
+    - milliseconds，毫秒
 
 ## 对象
-- document，document对象代表整个网页，也是寻找元素、属性、样式、事件的起点
+- document
+    - document对象代表整个网页，也是寻找元素、属性、样式、事件的起点
+- HTMLCollection
+    - HTMLCollection对象是一系列HTML元素的类似向量列表（array-like list），可以使用索引号、id或名称调用该列表中的值，也可以用使用length属性获取列表长度
+    - 无法获取属性（attribute）节点和文本节点
+    - <mark>该列表不是向量，不可以使用向量方法</mark>
+- NodeList
+    - NodeList对象是一个HTML文件中所有节点的列表，与HTMLCollection对象类似，但只可以使用索引号调用列表中的值
+    - 可获取属性（attribute）节点和文本节点
+    - 一些旧版的浏览器返回NodeList对象代替HTMLCollection对象，比如getElementByClassName()方法
+    - 所有的浏览器为childNodes返回NodeList对象
+    - 大部分浏览器为querySelectorAll()方法返回NodeList对象
+- 
 
 ## 属性
 - innerHTML，获取或替换HTML元素内容，element.innerHTML = new html content
@@ -895,14 +912,16 @@ finally {
 
 ## 方法
 - getElementById("IdName")，依据ID寻找元素
-- getElementsByTagName("TagName")，依据HTML标签名称寻找元素
+- getElementsByTagName("TagName")，依据HTML标签名称寻找元素，返回HTMLCollection对象
 - getElementsByClassName("ClassName")，依据类名称寻找元素
-- querySelectorAll(value)，寻找符合条件的所有CSS选项
+- querySelectorAll(value)，寻找符合条件的所有CSS选项，返回NodeList对象
 - setAttribute(attribute, value)，获取或修改HTML元素的属性值
-- createElement(element)，创建HTML元素
-- removeChild(element)，移除HTML元素
-- appendChild(element)，增加HTML元素
-- replaceChild(element)，替换HTML元素
+- createElement(element)，创建新的元素节点
+- createTextNode("strings")，创建新的文本节点
+- removeChild(element)，移除子节点，但必须知道子节点的父节点是什么，也就是说，只有在知道父节点的情况下才有可能删除子节点
+- appendChild(element)，增加子节点
+- replaceChild(element)，替换子节点
+- insertBefore(element,child|parent)，在element节点前插入子节点或父节点
 - write(text)，写入HTML输出流
 - addEventListener("event", function[, useCapture])，依据事件类型执行函数，其中，事件类型不需要事件前缀，比如onclick中的on；useCapture只有true和false两个值，true表示capturing、false表示bubbing，主要功能是，当存在多个HTML元素嵌套并都设定了事件及其行动时，capturing从外向里执行，而bubbing则从里向外执行
 - removeEventListener("event", function)，移除添加的EventListener
@@ -987,30 +1006,192 @@ finally {
 | DOCUMENT_NODE | 9 | HTML文件 |
 | DOCUMENT_TYPE_NODE | 10 | &lt;!Doctype html&gt; |
 
-
-
 # JS浏览器BOM
+BOM是Browser Object Model的首字母简称，中文翻译为浏览器对象模型，允许JavaScript与浏览器对话，拥有属性和方法，但没有官方标准
+## 对象
+- window
+    - 代表浏览器窗口，被所有浏览器支持
+    - 所有JavaScript的全局对象、函数和变量自动成为window对象的成员
+    - 全局变量是window对象的属性，甚至HTML DOM的document对象也是window对象的属性
+    - 全局函数是window对象的方法
+- window之下的对象
+    - screen，可以不带window前缀直接调用，即window.screen.width与screen.width等价
+    - location，可以不带window前缀直接调用
+    - history，可以不带window前缀直接调用
+    - navigator，可以不带window前缀直接调用
+- cookie
+    - 当服务器给浏览器发送完页面后，连接中断，服务器无法获取任何用户信息，cookies通过本地小型文本存储数据，解决如何记录用户信息的问题
+    - 使用document.cookie属性创建、读取、删除cookies
 
+## 属性和方法
+- window
+    - innerHeight，返回浏览器窗口的高，用px表示
+    - innerWidth，返回浏览器窗口的宽，用px表示
+    - open()，打开1个新的窗口
+    - close()，关闭当前窗口
+    - moveTo()，移动当前窗口
+    - resizeTo()，调整当前窗口大小
+    - alert("text")，弹出带文本的警告窗口
+    - confirm("text")，弹出需要用户确定或取消的窗口
+    - prompt("text1","text2")，弹出需要用户确定或取消的窗口，text1表示提示信息，text2表示默认信息
+    - setTimeout(function,milliseconds)，等待一段特定的时长后执行函数，仅执行1次
+    - setInterval(function,milliseconds)，每间隔milliseconds执行1次函数
+    - clearTimeout(variable)，如果setTimeout()方法中的函数尚未执行，可终止执行，其中的variable为setTimeout()方法赋值的变量
+    - clearInterval(variable)，终止setInterval()方法的执行，其中的variable为setInterval()方法赋值的变量
+- screen
+    - width，浏览器屏幕宽度
+    - height，浏览器屏幕高度
+    - availWidth，浏览器可用屏幕宽度
+    - availHeight，浏览器可用屏幕高度
+    - colorDepth，用于表示1种颜色所使用的位数（bits）
+        - 最旧的电脑或手机使用8位，表示256种VGA Colors
+        - 稍旧的电脑使用16位，表示65,536种High Colors
+        - 现代电脑使用24位或32位硬件作为颜色解决方案，24位表示16,777,216种True Colors；32位表示4,294,967,296种Deep Colors，RGB和十六进制的颜色表示方式就是24位的解决方案
+    - pixelDepth，与colorDepth相同
+- location
+    - href，返回当前页面的URL
+    - hostname，返回网页主机的域名
+    - pathname，返回当前页面的路径和文件名
+    - protocol，返回页面使用的web协议，如http:或https:
+    - port，返回页面网络端口，如果为80（http）或443（https）的默认端口，通常返回0或不返回任何内容
+    - assign("URL")，加载1个新的文件
+- history（为保护用户隐私，JavaScript在获取历史对象时存在限制）
+    - back()，与在浏览器中按下后退键的效果相同
+    - forward()，与在浏览器中按下前进键的效果相同
+- navigator（不要依赖通过navigator返回的浏览器相关信息）
+    - cookieEnabled，返回cookies是否可用，可用为true，否则为false
+    - appName，返回浏览器的应用名称，Netscape是IE11、Chrome、Firefox和Safari的应用名称
+    - appCodeName，返回浏览器的应用代码名称，Mozilla是Chrome、Firefox、IE、Safari和Opera的应用代码名称
+    - product，返回浏览器引擎的产品名称，Gecko是大多数浏览器的产品名称
+    - appVersion，返回浏览器的版本信息
+    - userAgent，返回用户端通过浏览器发送给服务器的头信息（header）
+    - platform，返回浏览器平台，即操作系统
+    - language，返回浏览器语言
+    - onLine，如果浏览器在线，返回true
+    - javaEnabled()，如果Java开启，返回true
 
 # JS AJAX
+## 概述
+- AJAX
+    - 不是程序语言
+    - 是一种从网页读写网页服务器的技术，联合使用了以下2种功能
+        - 浏览器内建的XMLHttpRequest对象（用于从服务器请求数据，也是AJAX的基石）
+        - JavaScript以及HTML DOM（用于展示或使用数据）
+    - 代表JavaScript和XML异步（Asynchronous JavaScript And XML）
+    - 涉及与服务器端的信息交换，因而需要学习SQL、Python、Node.JS、ASP、PHP等服务器端语言，以及XML、JSON等数据存储规范
+- AJAX的功能
+    - 页面完成加载后从服务器读取数据
+    - 更新网页而不需要重新加载页面
+    - 在后台向服务器发送数据
+- AJAX工作机制
+    - 网页发生1个事件
+    - JavaScript创建1个XMLHttpRequest对象
+    - XMLHttpRequest对象发送请求给服务器
+    - 服务器处理请求
+    - 服务器发送反馈给网页
+    - 通过JavaScript读取服务器反馈
+    - 通过JavaScript执行合适的行动
 
+## XMLHttpRequest对象
+- 概念
+    - XMLHttpRequest对象是AJAX的基石
+    - XMLHttpRequest对象被所有现代浏览器支持
+    - 因安全原因，浏览器不允许通过域名交换数据，也就是说，网页和XML文件必须在同一个服务器上才可以交换数据
+    - 回调函数（callback function）是将1个函数作为另1个函数参数的函数
+        - 必须包含URL和作为参数的函数，其中，URL为调用open方法时的URL
+        - 当在网站上有多个AJAX任务时，应该创建1个执行XMLHttpRequest对象的函数，以及1个回调函数执行每1个AJAX任务
+        - 在函数中设置函数参数时，可用this指代函数本身
+- 方法
+    - new XMLHttpRequest()，创建XMLHttpRequest对象
+    - abort()，取消当前请求
+    - getAllResponseHeaders()，返回头信息
+    - getResponseHeader()，返回特定头信息
+    - open(method,url,async,user,psw)，特定请求
+        - method，请求类型，GET或者POST，<mark>GET比POST更简单和快速，大多数情况下使用GET，但在更新服务器上的文件或数据库、发送大量数据至服务器（POST无大小限制）、发送用户输入信息时，POST比GET更加稳健和安全</mark>
+        - url，文件地址
+        - async，异步或同步，true为异步、false为同步；异步的作用是，当向服务器发送请求是，JavaScript不需要等待服务器的反馈，可直接执行后续的脚本，而同步则表示必须在接收到服务器的反馈后才执行后续脚本
+        - user，可选项，用户名
+        - psw，可选项，密码
+    - send()，发送请求给服务器，为GET请求使用
+    - send("string")，发送请求给服务器，为POST请求使用
+    - setRequestHeader(headerName,headerValue)，为将发送的头信息增加name/value对
+- 属性
+    - onreadystatechange，定义1个当readyState属性改变时被调用的函数
+    - readyState，保持XMLHttpRequest的状态
+        - 0：请求未被初始化
+        - 1：服务器连接已建立
+        - 2：收到请求
+        - 3：正在处理请求
+        - 4：请求处理结束，反馈已准备好
+    - responseText，将反馈数据作为字符串返回
+    - responseXML，将反馈数据作为XML数据返回
+    - status，返回请求的状态数值
+        - 200："OK"
+        - 403:"Forbidden"
+        - 404:"Not Found"
+        - 完整的状态数值及其代表的信息可查阅[HTTP Status Messages](https://www.w3schools.com/tags/ref_httpmessages.asp)
+    - statusText，返回请求的状态文本，如"OK"、"Not Found"
 
 # JS JSON
+JSON是JavaScript Object Notation的首字母简称，中文翻译为JavaScript对象表示，它既是一种存储和交换数据的语法，也是使用JavaScript对象表示方法书写的文本
 
+## 概述
+- JSON是什么
+    - 代表JavaScript Object Notation
+    - 轻量级的数据交换格式
+    - 自描述（self-describing）且易理解
+    - 语言独立，意味着任何程序语言都可以将JSON作为数据使用
+    - 文件后缀为".json"
+    - MIME类型为"application/json"
+- 功能
+    - 在浏览器和服务器之间交换的只能是文本数据，而JSON是文本
+    - 可将任何JavaScript对象转换到JSON，然后将JSON发送给服务器
+    - 也可将任何从服务器接收到的JSON转换为JavaScript对象
+- 语法
+    - JSON语法是JavaScript语法的子集
+    - 数据是name/value对，用`:`作为分隔符
+    - name/value对用`,`作为分隔符
+    - 花括号定义对象，可嵌套，使用`.property`调用属性值，delete删除对象属性
+    - 方括号定义向量，可嵌套，使用索引号调用向量值，delete删除向量值
+- name/value
+    - JSON的name需要双引号，而JavaScript的name不需要
+    - JSON的value可以是字符串、数值、JSON对象、向量、布尔值、null，JavaScript的value除JSON的value外，还加上函数、日期、undefined
+    - JSON的字符串值必须且只能是双引号，但JavaScript的既可以是双引号，也可以是单引号
+- JSON与XML的异同
+    - 相同点
+        - 自描述
+        - 有层级结构
+        - 被解析，且能被大部分程序语言使用
+        - XMLHttpRequest可拉取
+    - 不同点
+        - JSON不使用结束标签
+        - JSON更简短
+        - JSON能够更快速地被读写
+        - JSON可使用向量
+        - JSON可被1个标准的JavaScript函数解析，但XML必须通过XML解析器才能解析
+    - 结论
+        - XML比JSON更难解析
+        - JSON被解析成可用的JavaScript对象
+        - 对于AJAX应用，JSON比XML更快且更简单
 
-# jQuery
+## 应用
+- JSON.parse(string)方法
+    - 解析从服务器获取的字符串数据
+- JSON.stringify(variable)方法
+    - 将JavaScript对象转换成字符串
+- PHP
+    - 在客户端和服务端交换数据，需要学习服务端的PHP语言
+- JSONP
+    - JSONP是一种跨域名发送JSON数据的方法
+    - 不使用XMLHttpRequest对象
+    - 使用\<script\>标签，即以通过脚本与服务器交换数据的方式，替代通过XMLHttpRequest对象与服务器交换数据的方式
 
-
-
-# AngularJS
-
-
-
-
-
+# 参考资料
+- [W3School.com JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+- [JavaScript and HTML DOM Reference](https://www.w3schools.com/jsref/default.asp)
 
 # 版本记录
-1. ,v1.0.0
+1. 2018年06月17日，v1.0.0
 
 # 微博发布
 - [ ] 概要
@@ -1028,8 +1209,18 @@ finally {
     - [ ] 错误处理
     - [ ] 其他
 - [ ] JS HTML DOM
+    - [ ] 概要
+    - [ ] 对象
+    - [ ] 属性
+    - [ ] 方法
+    - [ ] 事件
+    - [ ] 节点
 - [ ] JS浏览器BOM
+    - [ ] 对象
+    - [ ] 属性和方法
 - [ ] JS AJAX
+    - [ ] 概述
+    - [ ] XMLHttpRequest对象
 - [ ] JS JSON
-- [ ] jQuery
-- [ ] AngularJS
+    - [ ] 概述
+    - [ ] 应用

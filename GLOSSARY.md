@@ -39,3 +39,9 @@ API是Application Programming Interface的首字母简称，中文名为应用�
 
 ## URI
 URI是Uniform Resource Identifier的首字母简称，中文译为统一资源标识符，它是一个表示抽象或实物资源的紧凑字符序列，URI的任意实例或者有名称、或者有地址、或者两者都有，因此，可将URL和URN理解为URI的子集；详细内容可参考[RFC3986](https://tools.ietf.org/html/rfc3986)、[RFC3305](https://tools.ietf.org/html/rfc3305)和[RFC2141](https://tools.ietf.org/html/rfc2141)
+
+## BOM
+BOM是Browser Object Model的首字母简称，中文翻译为浏览器对象模型，允许JavaScript与浏览器对话，但没有官方标准，拥有属性和方法
+
+## JSON
+JSON是JavaScript Object Notation的首字母简称，中文翻译为JavaScript对象表示，它是一种存储和交换数据的语法，使用JavaScript对象表示方法书写的文本
